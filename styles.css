@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    border: 2px solid black;
+    width: 700px;
+    height: 500px;
+}
+
+.grid-square {
+    border: 0.5px solid black;
+}
