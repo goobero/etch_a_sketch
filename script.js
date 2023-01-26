@@ -1,5 +1,6 @@
 const defaultSize = 16;
 const gridContainer =  document.getElementById('grid-container');
+let nowSize = defaultSize;
 
 function makeGrid(size) {
     gridContainer.style.gridTemplateColumns =`repeat(${size}, 1fr)`;
@@ -15,16 +16,19 @@ function makeGrid(size) {
     }
 };
 
-
-/*function newSize(size) {
-    let num = prompt("Please enter the number of squares per side you want for the grid.")
-    let newSize = parseInt(num);
-    if (newSize < 100) {
-        setGrid(size);
-    } else {
+function resizeGrid(newSize) {
+    let num = prompt("Please enter a number specifying the number of rows/columns you want the grid to have.");
+    newSize = parseInt(num);
+    if (newSize < 100) { 
+        gridContainer.innerHTML = '';
+        makeGrid(newSize);
+    } 
+    else if (newSize > 100) {
         alert("Sorry, please choose a number smaller than 100");
     }
+    else {
+        alert("Please enter a number");
+    }
 };
-*/
 
 makeGrid(defaultSize);
