@@ -1,11 +1,15 @@
 const defaultSize = 16;
 const gridContainer =  document.getElementById('grid-container');
+const rainbowButton = document.getElementById('rainbow-button');
+
 let nowSize = defaultSize;
+let rainbowMode = false;
+
+rainbowButton.onclick = () => rainbowMode = true;
 
 function makeGrid(size) {
     gridContainer.style.gridTemplateColumns =`repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
     for (i = 0; i < size * size; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
@@ -15,7 +19,12 @@ function makeGrid(size) {
 };
 
 function changeColour(event) {
-    event.target.style.backgroundColor = 'pink';
+    if (rainbowMode === true) {
+        getRandomColour(event);
+    }
+    else {
+        event.target.style.backgroundColor = 'pink';
+    }
 };
 
 function resizeGrid(newSize) {
@@ -40,6 +49,7 @@ function resizeGrid(newSize) {
 function resetGrid() {
     gridContainer.innerHTML=''
     makeGrid(defaultSize);
+    rainbowMode = false;
 }
 
 function getRandomColour(event) {
@@ -51,8 +61,5 @@ function getRandomColour(event) {
     event.target.style.backgroundColor = randomColour;
 }
 
-function rainbowMode() {
-    resetGrid();
-}
 
 makeGrid(defaultSize);
