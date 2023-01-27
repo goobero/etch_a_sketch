@@ -9,7 +9,6 @@ function makeGrid(size) {
     for (i = 0; i < size * size; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
-        gridSquare.addEventListener('mousedown', changeColour);
         gridSquare.addEventListener('mouseover', changeColour);
         gridContainer.appendChild(gridSquare);
     }
@@ -41,6 +40,19 @@ function resizeGrid(newSize) {
 function resetGrid() {
     gridContainer.innerHTML=''
     makeGrid(defaultSize);
+}
+
+function getRandomColour(event) {
+    const choices = "0123456789ABCDEF".split('');
+    let randomColour = "#";
+    for (let i = 0; i < 6; i++) {
+        randomColour+= choices[Math.floor(Math.random() * choices.length)];
+    }
+    event.target.style.backgroundColor = randomColour;
+}
+
+function rainbowMode() {
+    resetGrid();
 }
 
 makeGrid(defaultSize);
