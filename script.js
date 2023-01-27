@@ -8,7 +8,7 @@ let colourPickerMode = false;
 
 rainbowButton.onclick = () => rainbowMode = true;
 colourPicker.onclick = () => {
-    rainbowMode ===false;
+    rainbowMode = false;
     colourPickerMode = true;
 };
 
