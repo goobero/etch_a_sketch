@@ -38,4 +38,9 @@ function resizeGrid(newSize) {
     }
 }
 
+function resetGrid() {
+    gridContainer.innerHTML=''
+    makeGrid(defaultSize);
+}
+
 makeGrid(defaultSize);
