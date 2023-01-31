@@ -3,9 +3,12 @@ const gridContainer =  document.getElementById('grid-container');
 const rainbowButton = document.getElementById('rainbow-button');
 const colourPicker = document.getElementById('colourpicker');
 
+let mouseDown = false;
 let rainbowMode = false;
 let colourPickerMode = false;
 
+document.body.onmousedown = () => mouseDown = true;
+document.body.onmouseup = () => mouseDown = false;
 rainbowButton.onclick = () => rainbowMode = true;
 colourPicker.onclick = () => {
     rainbowMode = false;
@@ -19,19 +22,24 @@ function makeGrid(size) {
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
         gridSquare.addEventListener('mouseover', changeColour);
+        gridSquare.addEventListener('mousedown', changeColour);
         gridContainer.appendChild(gridSquare);
     }
 };
 
 function changeColour(event) {
-    if (rainbowMode === true) {
-        getRandomColour(event);
+    if (event.type === "mouseover" && mouseDown === false) {
+        return;
     }
-    else if (colourPickerMode === true) {
-        getPickedColour(event);
-    } else {
-        event.target.style.backgroundColor = 'black';
-    }
+        if (rainbowMode === true) {
+            getRandomColour(event);
+        }
+        else if (colourPickerMode === true) {
+            getPickedColour(event);
+        } else {
+            event.target.style.backgroundColor = 'black';
+            console.log(event.type);
+       }
 };
 
 function getPickedColour(event) {
