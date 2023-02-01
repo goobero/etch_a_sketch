@@ -1,4 +1,41 @@
+body {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+}
 
+h1 {
+    text-align: center;
+    color:rgb(73, 48, 174)
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    margin: 40px 400px 50px 280px;
+    gap: 30px;
+}
+
+#buttons-container { 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px;
+    flex-direction: column;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+#colourpicker {
+    width: 165px;
+    height: 30px;
+}
 
 #grid-container {
     display: grid;
@@ -7,6 +44,6 @@
 }
 
 .grid-square {
-    border: 1px solid black;
+    border: 0.1px solid rgb(0, 0, 0);
 }
 
