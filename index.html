@@ -17,12 +17,12 @@
     <div class="content">
         <div id="buttons-container">
             <label for="colourpicker">colour picker:</label>
-            <input type="color" id="colourpicker" value = "#000000">
+            <input type="color" id="colourpicker" value = "#99A799">
             <button id="rainbow-button">rainbow mode</button>
             <button id ="eraser">eraser</button>
 
-            <button onclick="resetGrid()">reset</button>
-            <button onclick="resizeGrid()">click me to resize the sketchpad!</button>
+            <button id="reset-button" onclick="resetGrid()">reset</button>
+            <button id="resize-button" onclick="resizeGrid()">click me to resize the sketchpad!</button>
         </div>
         <div class="wrapper">
             <div id="grid-container"></div>

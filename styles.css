@@ -1,11 +1,15 @@
 body {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 20px;
+    font-size: 22px;
+    background-image: url("https://images.unsplash.com/photo-1609414558965-3bec66c06de7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-size: 1450px;
+    color: #5E454B;
 }
 
 h1 {
     text-align: center;
-    color:rgb(73, 48, 174)
+    color: #5E454B;
+    font-size: 48px;
 }
 
 .wrapper {
@@ -15,8 +19,9 @@ h1 {
 
 .content {
     display: flex;
-    margin: 40px 400px 50px 280px;
+    margin: 40px 400px 50px 220px;
     gap: 30px;
+    width: 500px;
 }
 
 #buttons-container { 
@@ -30,6 +35,12 @@ h1 {
 button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    border-radius: 10px;
+}
+
+button:active,
+input:active {
+    background-color: pink;
 }
 
 #colourpicker {
@@ -41,6 +52,7 @@ button {
     display: grid;
     width: 500px;
     height: 500px;
+    background-color: white;
 }
 
 .grid-square {
