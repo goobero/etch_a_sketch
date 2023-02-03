@@ -3,6 +3,7 @@ const gridContainer =  document.getElementById('grid-container');
 const rainbowButton = document.getElementById('rainbow-button');
 const colourPicker = document.getElementById('colourpicker');
 const eraserButton = document.getElementById('eraser');
+const buttons = document.querySelectorAll('button');
 
 let currentSize = defaultSize;
 let mouseDown = false;
@@ -12,7 +13,6 @@ let eraserMode = false;
 
 document.body.onmousedown = () => mouseDown = true;
 document.body.onmouseup = () => mouseDown = false;
-
 
 eraserButton.onclick = () => {
     rainbowMode = false;
@@ -30,7 +30,6 @@ colourPicker.onclick = () => {
     rainbowMode = false;
     colourPickerMode = true;
 };
-
 
 function makeGrid(size) {
     gridContainer.style.gridTemplateColumns =`repeat(${size}, 1fr)`;
@@ -101,5 +100,16 @@ function resetGrid() {
     gridContainer.innerHTML=''
     makeGrid(currentSize);
 }
+
+buttons.forEach(buttons => {
+    buttons.addEventListener('click', changeButtonColour);
+});
+
+function changeButtonColour(event) {
+    buttons.forEach(buttons => {
+        buttons.classList.remove('highlight');
+        event.target.classList.add('highlight');
+    })
+};
 
 makeGrid(defaultSize);

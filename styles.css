@@ -38,8 +38,7 @@ button {
     border-radius: 10px;
 }
 
-button:active,
-input:active {
+.highlight {
     background-color: pink;
 }
 
