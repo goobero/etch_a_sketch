@@ -90,8 +90,11 @@ function getRandomColour(event) {
 
 function getGradientColour(event) {
     let currentOpacity = Number(event.target.style.backgroundColor.slice(-4,-1));
+    let currentRgb = event.target.style.backgroundColor;
     if (currentOpacity <= 0.9) {
         event.target.style = `background-color: rgba(0, 0, 0, ${currentOpacity + 0.1})`;
+    } else if (currentRgb !== "rgb(0, 0, 0)") {
+       event.target.style = `background-color: rgba(0, 0, 0, 0.1)`;
     }
 }
 
