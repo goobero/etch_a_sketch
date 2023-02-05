@@ -131,7 +131,7 @@ function changeButtonColour(event) {
     buttons.forEach(buttons => {
         buttons.classList.remove('highlight');
         event.target.classList.add('highlight');
-    })
+    });
 }
 
 makeGrid(defaultSize);
