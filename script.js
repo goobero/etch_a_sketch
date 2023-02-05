@@ -29,12 +29,13 @@ rainbowButton.onclick = () => {
     gradientMode = false;
     rainbowMode = true;
 }
+
 colourPicker.onclick = () => {
     eraserMode = false;
     rainbowMode = false;
     gradientMode = false;
     colourPickerMode = true;
-};
+}
 
 gradientButton.onclick = () => {
     rainbowMode = false;
@@ -42,6 +43,7 @@ gradientButton.onclick = () => {
     eraserMode = false;
     gradientMode = true;
 }
+
 function makeGrid(size) {
     gridContainer.style.gridTemplateColumns =`repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -52,7 +54,7 @@ function makeGrid(size) {
         gridSquare.addEventListener('mousedown', changeColour);
         gridContainer.appendChild(gridSquare);
     }
-};
+}
 
 function changeColour(event) {
     if (event.type === "mouseover" && mouseDown === false) {
@@ -70,7 +72,7 @@ function changeColour(event) {
        } else if (eraserMode === true) {
             event.target.style.backgroundColor = 'white';
        }
-};
+}
 
 function getPickedColour(event) {
     let pickedColour = document.getElementById('colourpicker').value;
@@ -109,9 +111,8 @@ function resizeGrid(newSize) {
 
     } else {
         alert("Please write a number smaller than 100");
-    }
-    
-};
+    } 
+}
 
 function setSize(newSize) {
     currentSize = newSize;
@@ -131,6 +132,6 @@ function changeButtonColour(event) {
         buttons.classList.remove('highlight');
         event.target.classList.add('highlight');
     })
-};
+}
 
 makeGrid(defaultSize);
